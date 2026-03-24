@@ -1,4 +1,4 @@
-import { CreateHabitWindow, Rofl, TasksContainer } from "@/widgets";
+import { CreateEntryWindow, CreateHabitWindow, Rofl, TasksContainer } from "@/widgets";
 import { Calendar } from "../widgets/ui/Calendar";
 
 export function App() {
@@ -14,6 +14,7 @@ export function App() {
   return (
     <div className="w-full h-screen bg-neutral-300 flex flex-col transition-all">
       <CreateHabitWindow />
+      <CreateEntryWindow />
       <Calendar year={newYear} month={newMonth} />
       <TasksContainer />
       <Rofl />

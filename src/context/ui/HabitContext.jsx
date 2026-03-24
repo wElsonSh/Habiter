@@ -166,6 +166,8 @@ export function HabitProvider({ children }) {
 
     const [isRoflOpen, setIsRoflOpen] = useState(false)
 
+
+
     const value = {
         isCreateHabitOpen,
         setIsCreateHabitOpen,
