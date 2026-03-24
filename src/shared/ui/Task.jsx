@@ -13,8 +13,6 @@ export function Task({ task, complete_row, failed_row, isComplete }) {
     const complete_style = isComplete ? 'bg-green-600 border-green-200/50 pointer-events-none' : ' border-neutral-400/50'
         , complete_btn_style = isComplete ? 'opacity-100' : 'opacity-0'
 
-    const progress_res = complete_row == failed_row ? complete_row : complete_row > failed_row ? complete_row : failed_row
-
     const feedbackPhrases = {
         positive: [
             "Keep it up!",
@@ -59,8 +57,9 @@ export function Task({ task, complete_row, failed_row, isComplete }) {
                 </button>
             </div>
             <div className="w-full h-fit flex items-center gap-1 pl-12 text-base">
-                {complete_row == failed_row ? (<FaCheck className="text-green-600" />) : complete_row > failed_row ? (<FaCheck className="text-green-600" />) : (<IoClose className="scale-130 text-red-600" />)}
-                <span className="text-neutral-400">{progress_res} in a row. {complete_row == failed_row ? feedbackPhrases.positive[random_phrases] : complete_row > failed_row ? feedbackPhrases.positive[random_phrases] : feedbackPhrases.negative[random_phrases]}</span>
+                <FaCheck className="text-green-600" />
+                <span className="text-neutral-400">{complete_row} and </span><IoClose className="ml-2 scale-130 text-red-600" />
+                <span className="text-neutral-400">{failed_row} in a row. {complete_row == failed_row ? feedbackPhrases.positive[random_phrases] : complete_row > failed_row ? feedbackPhrases.positive[random_phrases] : feedbackPhrases.negative[random_phrases]}</span>
             </div>
         </li>
     );
